@@ -1,70 +1,34 @@
-# Bonvin Intelligence Platform — Public Portfolio
+# Bonvin Intelligence Platform — public case study
 
-A public case study of an internal business intelligence and applied-AI platform built for a Canadian wine & spirits importer/distributor.
+**[View the case study and product screenshots](https://janiceliu0918.github.io/bonvin-intelligence-portfolio/)**
 
-The production repository remains private. This portfolio focuses on **product thinking, architecture, business workflows, data engineering, and controlled AI access** without publishing credentials or secrets.
+## Problem → solution
 
-## What I built
+Recurring product, pricing, inventory and purchase-order questions motivated internal
+self-service workflows for a wine and spirits importer/distributor.
 
-The platform brings together product search, pricing and margin logic, inventory, purchase orders, reporting, cross-market comparison, and an authenticated AI assistant.
+## Architecture and capabilities
 
-**Stack:** React · FastAPI · Python · SQL · Supabase/PostgreSQL · AWS · GitHub Actions · Playwright · LLM Tool Calling · MCP / RAG
+The internal work combines business data, deterministic pricing rules, application services
+and approved AI tools. The case study explains product lookup across BC/Alberta, pricing and
+margin analysis, inventory/PO visibility, reporting and Ask Bonvin AI.
 
-## Product walkthrough
+The underlying work uses React, FastAPI, Python and PostgreSQL/Supabase. The public repository
+contains HTML/CSS presentation and approved screenshots, **not the private application source**.
+Screenshots illustrate workflows; they do not independently prove backend authorization,
+calculation correctness, test coverage or deployment of every component.
 
-1. **BC Product Search** — unified commercial lookup.
-2. **Alberta Product Search** — parallel cross-market search.
-3. **Price Compare** — side-by-side commercial comparison.
-4. **Pricing & Margin Calculator** — reusable business rules instead of repeated spreadsheet work.
-5. **Inventory** — structured operational lookup.
-6. **Reports & Downloads** — validated reporting artifacts.
-7. **PO Margin Dashboard** — PO status plus commercial analysis.
-8. **Ask Bonvin AI** — grounded answers through approved business tools.
-9. **Secure Workspace** — authenticated internal access.
+## Evidence and maturity
 
-## Architecture
+- Product screenshots show the user-facing workflows.
+- Architecture text describes the internal design; it is not an executable backend here.
+- Implementation, deployment and production readiness are separate claims. This case study
+  does not establish a production-complete system for every component.
+- MCP/RAG and semantic-retrieval work must not be inferred to be production-complete from
+  stack names or diagrams. Component maturity requires separate supporting evidence.
 
-```text
-External business / regulatory sources
-                |
-                v
-      Scheduled ingestion
-   Playwright + GitHub Actions
-                |
-                v
-       Validation / staging
-                |
-                v
-      Supabase / PostgreSQL
-        /       |        \
-       /        |         \
-      v         v          v
- FastAPI     MCP tools   Reporting
- services    (read-only)  workflows
-      \         |          /
-       \        |         /
-        +--------+--------+
-                 |
-                 v
-          React workspace
-                 |
-        +--------+--------+
-        |                 |
-        v                 v
- Business users      Ask Bonvin AI
-```
+## Public demo
 
-## Engineering decisions
-
-- Keep reusable business/query logic outside prompts.
-- Use controlled, read-oriented AI tools rather than arbitrary database access.
-- Validate and reconcile ingestion so stale or incomplete source data fails visibly.
-- Migrate progressively from validated pricing/Streamlit workflows to React + FastAPI.
-- Document architecture, testing, deployment, and handoff for maintainability.
-
-## Public site
-
-The repository includes an `index.html` portfolio landing page intended for GitHub Pages. Full-size product screenshots are presented individually rather than compressed into a collage.
-
-**Role:** Intelligence Coordinator / internal product builder  
-**Focus:** Business systems · analytics engineering · applied AI · workflow automation
+The linked GitHub Pages site is a **static case study**, not access to the internal application.
+Open `index.html` locally to inspect the presentation. Approved screenshots are preserved.
+No private application code, credentials or additional business datasets are included.
